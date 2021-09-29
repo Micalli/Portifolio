@@ -1,0 +1,25 @@
+i.menu-mobile{
+    position: fixed;
+    color: #fff;
+    background-color: #02152e;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+@media (max-width:1424px){
+
+    i.menu-mobile{
+    display: flex;
+    }
+    
+}
