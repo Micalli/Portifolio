@@ -183,4 +183,75 @@ i.menu-mobile{
     #main{
         margin-left: 0;
     }
+
 }
+.egide{
+    color: #212529;
+}
+.egide:hover{
+    color: #03aa86;
+}
+
+*::-webkit-scrollbar {
+    width: 11px;               /* width of the entire scrollbar */
+  }
+  
+  *::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 .3rem #00000050;
+    background: #fff;        /* color of the tracking area */
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #02152e;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    
+  }
+
+  .section-bg{
+      background-color: #eff5ff;
+  }
+  .progress-bar {
+    background-color: #353849!important;
+  }
+  .bar1 {
+    width: 70%;
+  }
+  .bar2 {
+    width: 75%;
+  }
+  .bar3 {
+    width: 60%;
+  }
+  .bar4 {
+    width: 70%;
+  }
+  .bar5 {
+    width: 50%;
+  }
+  .bar6 {
+    width: 30%;
+  }
+  .bar7 {
+    width: 50%;
+  }
+  .bar8 {
+    width: 85%;
+  }
+  .bar9 {
+    width: 95%;
+  }
+  .bar10 {
+    width: 75%;
+  }
+  .bar11 {
+    width: 88%;
+  }
+  .bar12 {
+    width: 60%;
+  }
+  .bar13{
+    width: 80%;
+  }
+  .bar14{
+    width: 90%;
+  }

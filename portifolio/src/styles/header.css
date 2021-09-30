@@ -16,7 +16,11 @@
     display: block;
     width: 120px;
     border: 8px solid #353849;  
-    border-radius: 50%;  
+    border-radius: 50%;
+    transition: 0.5s;  
+}
+#header .profile img:hover{
+    border: 8px solid #00bd94;      
 }
 
 #header .profile h1{
@@ -58,8 +62,8 @@
     
 }
 
-.nav-menu a svg,
-.nav-menu a:focus svg{
+.nav-menu a i,
+.nav-menu a:focus i{
     margin-right: 0.8rem;
     color: #6f7180;
     
@@ -74,10 +78,10 @@
     color: #fff;
 }
 
-.nav-menu a:hover svg,
-.nav-menu .active svg,
-.nav-menu .active:focus svg,
-.nav-menu li:hover > a svg{
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover > a i{
     color: #00bd94;
 
 }
