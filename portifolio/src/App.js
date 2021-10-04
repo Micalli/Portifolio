@@ -1,15 +1,37 @@
+import { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Carousel from "react-bootstrap/Carousel";
+import Card from "react-bootstrap/Card";
+
 import ContactUs from "./components/EmailForm";
 import Hamburguer from "./components/Hamburguer";
 import Header from "./components/Header";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import ImgPerfil from "./assets/perfil.png";
 import Logo from "./assets/logo.png";
-import { useEffect } from "react";
+import teste from "./assets/teste.png";
+
+import Netiflix from "./assets/netflix.png";
+import letMeAsk from "./assets/letmeask.png";
+import Curriculo from "./assets/Curriculo.png";
 
 import "./style.css";
 
 function App() {
+
+
+  function handleEnterCarouselBlur(){
+    const Img = document.querySelector(".carousel-item > img");
+    const Legend = document.querySelector("div.carousel-caption");
+
+    Img.classList.toggle("blur")
+  }
+
+  function handleLeaveCarouselBlur(){
+    const Img = document.querySelector(".carousel-item.active");
+
+    Img.classList.remove("blur")
+  }
   useEffect(() => {
     const menuMobile = document.querySelector(".menu-mobile");
     const body = document.querySelector("body");
@@ -27,6 +49,8 @@ function App() {
         }
       });
     });
+    
+    
   });
 
   return (
@@ -234,11 +258,11 @@ function App() {
                   <div
                     class="progress-bar bar5"
                     role="progressbar"
-                    aria-valuenow="50"
+                    aria-valuenow="70"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   >
-                    50%
+                    70%
                   </div>
                 </div>
                 <p className="mt-3 mb-0">Angular</p>
@@ -369,6 +393,185 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-5 cv" id="curriculo">
+          <div className="container pb-5">
+            <h2 className="pt-3 pb-4">Curriculo</h2>
+
+            <div className="row">
+              <div className="col-md-6">
+                <h3 className="cv-title">Educação</h3>
+                <div className="cv-item">
+                  <h4>Análise e Desenvolvimento de Sistemas</h4>
+                  <h5>2021 - 2024</h5>
+                  <p>
+                    <em>Universidade Metodista de São Paulo</em>
+                  </p>
+                  <p>
+                    Curso técnologo voltado em conceitos e técnicas para
+                    analisar, projetar, implementar e atualizar sistemas de
+                    informação para diversos setores de atividades.
+                  </p>
+                </div>
+                <div className="cv-item">
+                  <h4>Desenvolvedor Web Java – Fullstack </h4>
+                  <h5>2021 - 2021</h5>
+                  <p>
+                    <em>Generation Brasil</em>
+                  </p>
+                  <p>
+                    Nos fundamentos de programação estudamos variáveis, tipos de
+                    dados, códigos e sequências utilizados em programação, foram
+                    abordados os princípios da estruturação de dados, estrutura
+                    e hierarquia de dados e programação orientada a objetos.
+                  </p>
+                </div>
+                <div className="cv-item">
+                  <h4>Técnico em Mecânica</h4>
+                  <h5>2019 - 2020</h5>
+                  <p>
+                    <em>Colégio Termomecanica - CTM</em>
+                  </p>
+                  <p>
+                    Ensaios e oficinas e um projeto de um redutor com objetivo
+                    de dimensionar o redutor para içar uma determinada carga
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <h3 className="cv-title">Profissional</h3>
+                <div className="cv-item">
+                  <h4>Atendente telemarketing</h4>
+                  <h5>2018 - 2021</h5>
+                  <p>
+                    <em>Atento S/A</em>
+                  </p>
+                  <p>Atendimento a empresas e SAC</p>
+                </div>
+                <div className="cv-item">
+                  <h4>Jovem Aprendiz</h4>
+                  <h5>2017 - 2017</h5>
+                  <p>
+                    <em>INSS - Previdência Social</em>
+                  </p>
+                  <p>
+                    Gestão de arquivos, comunicação atendimento telefônico
+                    interno e proatividade para pegar as tarefas.
+                  </p>
+                </div>
+                <div className="cv-item">
+                  <h4>Auxiliar Administrativo</h4>
+                  <h5>2016 - 2016</h5>
+                  <p>
+                    <em>Imobiliária Tiradentes </em>
+                  </p>
+                  <p>
+                    Atendimento telefônico, cadastro de clientes em tabelas,
+                    digitação de contratos, gestão de documentos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="portifolio" className="section-bg mt-5">
+          <div className="container pb-5 pt-5">
+            <h2 className="pb-4">Portifólio</h2>
+
+            <Carousel variant="dark">
+              <Carousel.Item interval={9999}>
+                <img
+                  className="d-block w-100 hover-img"
+                  src={letMeAsk}
+                  alt="First slide"
+                  
+                />
+                <Carousel.Caption >
+                  <h5>LetMeAsk</h5>
+                  <p>
+                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  </p>
+                  <div class="d-flex justify-content-center">
+                    <a
+                      href="https://github.com/codethi/blogPessoal-front-back"
+                      target="_blank"
+                      class="btn btn-outline-dark me-3"
+                    >
+                      <i class="bi bi-github bb"></i>
+                    </a>
+                    <a
+                      href="https://newbloggen.netlify.app/#/login"
+                      target="_blank"
+                      class="btn btn-outline-primary"
+                    >
+                      <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={Netiflix}
+                  alt="Second slide"
+                />
+                <Carousel.Caption>
+                  <h5 className="text-white">Clone do Netiflix</h5>
+                  <p className="text-white">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <div class="d-flex justify-content-center">
+                    <a
+                      href="https://github.com/codethi/blogPessoal-front-back"
+                      target="_blank"
+                      class="btn btn-outline-dark me-3"
+                    >
+                      <i class="bi bi-github"></i>
+                    </a>
+                    <a
+                      href="https://newbloggen.netlify.app/#/login"
+                      target="_blank"
+                      class="btn btn-outline-primary"
+                    >
+                      <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={Curriculo}
+                  alt="Third slide"
+                />
+                <Carousel.Caption>
+                  <h5>Curriculo</h5>
+                  <p>
+                    Praesent commodo cursus magna, vel scelerisque nisl
+                    consectetur.
+                  </p>
+                  <div class="d-flex justify-content-center">
+                    <a
+                      href="https://github.com/codethi/blogPessoal-front-back"
+                      target="_blank"
+                      class="btn btn-outline-dark me-3"
+                    >
+                      <i class="bi bi-github"></i>
+                    </a>
+                    <a
+                      href="https://newbloggen.netlify.app/#/login"
+                      target="_blank"
+                      class="btn btn-outline-primary"
+                    >
+                      <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
           </div>
         </section>
       </main>

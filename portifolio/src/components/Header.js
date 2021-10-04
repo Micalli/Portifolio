@@ -93,7 +93,7 @@ export default function Header() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#ability">
+              <a class="nav-link" href="#curriculo">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -108,7 +108,7 @@ export default function Header() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="#portifolio">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -123,7 +123,7 @@ export default function Header() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="#contato">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
