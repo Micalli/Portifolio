@@ -1,21 +1,13 @@
+import { useEffect } from "react";
+import Logo from '../assets/logo.png'
+
 import "../style.css";
 import "../styles/header.css";
-import { useEffect } from "react";
-import body from "../App";
-import menuMobile from "../App";
-
-
 
 
 import ImgPerfil from "../assets/perfil.png";
 
 export default function Header() {
-  useEffect(() => {
-    
-  
-
-    });
-
 
   return(
     <aside id="header">
@@ -36,8 +28,8 @@ export default function Header() {
         </section>
 
         <nav id="navbar" className="nav-menu ">
-          <ul class="nav flex-column">
-            <li class="nav-item">
+          <ul class="nav flex-column ">
+            <li class="nav-item ">
               <a class="nav-link active" aria-current="page" href="#inicio">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +129,10 @@ export default function Header() {
                 Contato
               </a>
             </li>
+            <img className="logo"  src={Logo} alt="Foto do Bruno" />
           </ul>
+          
+
         </nav>
       </aside>
   )

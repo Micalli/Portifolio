@@ -1,7 +1,10 @@
 import { useEffect } from "react";
+import emailjs from "emailjs-com";
+
+import toast, { Toaster } from "react-hot-toast";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
-import Card from "react-bootstrap/Card";
 
 import ContactUs from "./components/EmailForm";
 import Hamburguer from "./components/Hamburguer";
@@ -18,20 +21,30 @@ import Curriculo from "./assets/Curriculo.png";
 import "./style.css";
 
 function App() {
+  function sendEmail(e) {
+    e.preventDefault();
 
+    emailjs
+      .sendForm(
+        "emailMessage",
+        "template_ay5glcf",
+        e.target,
+        "user_38qB5mtMcSx09BVrhR4Q9"
+      )
 
-  function handleEnterCarouselBlur(){
-    const Img = document.querySelector(".carousel-item > img");
-    const Legend = document.querySelector("div.carousel-caption");
-
-    Img.classList.toggle("blur")
+      .then(
+        (result) => {
+          toast.success("Email enviado!",{
+            duration: 5000
+          });
+        },
+        (error) => {
+          toast.error("Algo de errado ocorreu");
+        }
+      );
+    e.target.reset();
   }
 
-  function handleLeaveCarouselBlur(){
-    const Img = document.querySelector(".carousel-item.active");
-
-    Img.classList.remove("blur")
-  }
   useEffect(() => {
     const menuMobile = document.querySelector(".menu-mobile");
     const body = document.querySelector("body");
@@ -49,8 +62,6 @@ function App() {
         }
       });
     });
-    
-    
   });
 
   return (
@@ -484,12 +495,12 @@ function App() {
             <Carousel variant="dark">
               <Carousel.Item interval={9999}>
                 <img
-                  className="d-block w-100 hover-img"
+                  className="d-block w-100 "
                   src={letMeAsk}
                   alt="First slide"
-                  
                 />
-                <Carousel.Caption >
+
+                <Carousel.Caption>
                   <h5>LetMeAsk</h5>
                   <p>
                     Nulla vitae elit libero, a pharetra augue mollis interdum.
@@ -527,14 +538,14 @@ function App() {
                     <a
                       href="https://github.com/codethi/blogPessoal-front-back"
                       target="_blank"
-                      class="btn btn-outline-dark me-3"
+                      class="btn btn-outline-dark me-3 a"
                     >
                       <i class="bi bi-github"></i>
                     </a>
                     <a
                       href="https://newbloggen.netlify.app/#/login"
                       target="_blank"
-                      class="btn btn-outline-primary"
+                      class="btn btn-outline-primary a"
                     >
                       <i class="bi bi-link-45deg"></i>
                     </a>
@@ -572,6 +583,65 @@ function App() {
                 </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
+          </div>
+        </section>
+
+        <section className="pt-5 pb-5" id="contato">
+          <div className="container mb-5">
+            <h2 className="pt-3 pb-3">Contato</h2>
+
+            <div className="row">
+              <div className="col">
+                <div className="card p-5 h-100 shadow border-0">
+                  <form onSubmit={sendEmail} autocomplete="off">
+                    <Toaster position="top-right" reverseOrder={false} />
+                    <div className="row pt-5 mx-auto">
+                      <div className="col-lg-8 col-sm-12 form-group mx-auto mb-3">
+                        <label>Nome</label>
+                        <input
+                          type="text"
+                          autoFocus
+                          className="form-control"
+                          required
+                          placeholder="Seu nome"
+                          name="name"
+                        />
+                      </div>
+                      <div className="col-lg-8 col-sm-12 form-group pt-1 mx-auto mb-3">
+                        <label>Email</label>
+                        <input
+                          type="email"
+                          className="form-control"
+                          required
+                          placeholder="Seu email"
+                          name="email"
+                        />
+                      </div>
+
+                      <div className="col-lg-8 col-sm-12 form-group pt-1 mx-auto ">
+                        <label>Mensagem</label>
+                        <textarea
+                          className="form-control l"
+                          id=""
+                          cols="30"
+                          rows="8"
+                          required
+                          placeholder="Sua mensagem"
+                          name="message"
+                        ></textarea>
+                      </div>
+                      <div className="col-lg-8 col-sm-12 pt-3 mx-auto d-flex justify-content-center mt-4">
+                        <input
+                          type="submit"
+                          className="btn btn-primary b"
+                          value="Enviar mensagem"
+                        ></input>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

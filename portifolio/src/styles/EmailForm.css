@@ -1,0 +1,21 @@
+ .form-control {
+   border: solid 0px ;
+
+     height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+  background-color: #edf0f3;
+
+  }
+
+  .form-control:focus {
+    background-color: #edf0f3;
+
+  box-shadow: 0 0 7px 0.2rem rgb(2 21 46 / 15%);
+
+ }
+
+  .form-control.l {
+    height: 90px;
+   
+ }

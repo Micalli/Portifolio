@@ -4,7 +4,7 @@
     left: 0;
     bottom: 0;
     background-color: #02152e;
-    overflow-y: auto;
+    overflow-y: hidden;
     width: 300px;
     transition: all ease-in-out 0.5s;
     padding: 0 15px;
@@ -50,7 +50,7 @@
 }
 
 .nav-menu{
-    padding: 1.5rem;
+    padding: 1.rem;
 }
 .nav-menu a,
 .nav-menu a:focus{
@@ -86,10 +86,22 @@
 
 }
 
-nav .logotipo{
-    width: 150px;
-    height: 160px ;
-    margin-top:485px;   
+.logo{
+    width: 60%;
+    height: 60%;
+    padding-top: 350px;
+    margin-left: 45px;
+
+}
+@media(max-width:1700px){
+    .logo{
+    width: 55%;
+    height: 55%;
+
+
+        padding-top: 280px;
+    
+    }
 }
 
 @media (max-width:1424px){
