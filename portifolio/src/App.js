@@ -1,18 +1,19 @@
 import { useEffect } from "react";
-import emailjs from "emailjs-com";
 
+import Aos from 'aos';
+
+
+import emailjs from "emailjs-com";
 import toast, { Toaster } from "react-hot-toast";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
+import 'aos/dist/aos.css'
 
-import ContactUs from "./components/EmailForm";
 import Hamburguer from "./components/Hamburguer";
 import Header from "./components/Header";
 
 import ImgPerfil from "./assets/perfil.png";
-import Logo from "./assets/logo.png";
-import teste from "./assets/teste.png";
 
 import Netiflix from "./assets/netflix.png";
 import letMeAsk from "./assets/letmeask.png";
@@ -31,11 +32,10 @@ function App() {
         e.target,
         "user_38qB5mtMcSx09BVrhR4Q9"
       )
-
       .then(
         (result) => {
-          toast.success("Email enviado!",{
-            duration: 5000
+          toast.success("Email enviado!", {
+            duration: 5000,
           });
         },
         (error) => {
@@ -62,7 +62,13 @@ function App() {
         }
       });
     });
+
+    
   });
+  useEffect(() => {
+    Aos.init({duration:1000});
+
+  }, []);
 
   return (
     <body>
@@ -84,7 +90,7 @@ function App() {
                 width="50"
                 height="50"
                 fill="currentColor"
-                class="bi bi-arrow-down text-white pe-2 fs-2"
+                className="bi bi-arrow-down text-white pe-2 fs-2"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -99,7 +105,7 @@ function App() {
 
         <section className="container mt-5" id="about">
           <div className="row w-100">
-            <div className="col-md-12">
+            <div className="col-md-12" data-aos="fade-down">
               <h2 className="pt-3">Sobre</h2>
               <p>
                 {" "}
@@ -116,29 +122,20 @@ function App() {
                 ultricies tortor. Nam iaculis tincidunt consequat. Nunc ipsum
                 orci, consequat a tincidunt sed, malesuada sit amet mi. Duis
                 euismod finibus dolor consectetur tincidunt. Vivamus tincidunt
-                fringilla ligula quis egestas. Morbi vel viverra purus, non
-                blandit sem. Maecenas ligula erat, elementum eu lectus ut,
-                ultricies cursus nisi. Sed lacinia semper volutpat. Pellentesque
-                dictum metus sit amet justo elementum tincidunt sit amet a
-                tellus. Aenean eleifend est eu mauris egestas, vel pharetra
-                augue posuere. Morbi eget libero imperdiet, viverra erat quis,
-                aliquet augue. Orci varius natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. In ut lacus pulvinar,
-                malesuada neque quis, vehicula massa. Fusce finibus dapibus
-                purus, sed consectetur augue vestibulum eget.
               </p>
             </div>
           </div>
           <div className="row mt-4 ">
-            <div className="col-md-4">
+            <div className="col-md-4 " data-aos="fade-right">
               <img
                 className="img-fluid shadow"
                 src={ImgPerfil}
                 alt="Foto do Bruno"
+                data-aos="fade-right"
               />
             </div>
 
-            <div className="col-md-8">
+            <div className="col-md-8 mt-1" data-aos="fade-up">
               <h3>Desenvolvedor Web</h3>
               <p>
                 {" "}
@@ -149,30 +146,30 @@ function App() {
 
               <div className="row mb-3">
                 <div className="col-md-6">
-                  <ul class="list-group list-group-flush fs-5">
-                    <li class="list-group-item">
+                  <ul className="list-group list-group-flush fs-5">
+                    <li className="list-group-item">
                       Niver:{" "}
                       <span className="fw-lighter">31 de julho de 1999</span>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Idade: <span className="fw-lighter">22 Anos</span>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Cidade:{" "}
                       <span className="fw-lighter">São Bernardo do Campo</span>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Estado: <span className="fw-lighter">São Paulo</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="col-md-6">
-                  <ul class="list-group list-group-flush fs-5">
-                    <li class="list-group-item">
+                  <ul className="list-group list-group-flush fs-5">
+                    <li className="list-group-item">
                       Hobby: <span className="fw-lighter">São Paulo</span>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Ultimo Projeto:
                       <a
                         href="https://egideonline.herokuapp.com/#/inicio"
@@ -183,11 +180,11 @@ function App() {
                         Égide.com
                       </a>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Trabalho:{" "}
                       <span className="fw-lighter">Não atuei na área</span>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                       Experiência: <span className="fw-lighter">4 meses</span>
                     </li>
                   </ul>
@@ -215,10 +212,11 @@ function App() {
             <div className="row mb-4">
               <div className="col-md-6">
                 <p className="mt-3 mb-0">HTML</p>
-                <div class="progress">
+                <div className="progress">
                   <div
-                    class="progress-bar bar1"
+                    className="progress-bar bar1"
                     role="progressbar"
+                    data-aos="fade-right"
                     aria-valuenow="70"
                     aria-valuemin="0"
                     aria-valuemax="100"
@@ -227,9 +225,10 @@ function App() {
                   </div>
                 </div>
                 <p className="mt-3 mb-0">CSS</p>
-                <div class="progress">
+                <div className="progress">
                   <div
-                    class="progress-bar bar2"
+                    className="progress-bar bar2"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="75"
                     aria-valuemin="0"
@@ -239,9 +238,10 @@ function App() {
                   </div>
                 </div>
                 <p className="mt-3 mb-0">JavaScript</p>
-                <div class="progress">
+                <div className="progress">
                   <div
-                    class="progress-bar bar3"
+                    className="progress-bar bar3"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="60"
                     aria-valuemin="0"
@@ -251,9 +251,10 @@ function App() {
                   </div>
                 </div>
                 <p className="mt-3 mb-0">Java</p>
-                <div class="progress">
+                <div className="progress">
                   <div
-                    class="progress-bar bar4"
+                    className="progress-bar bar4"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="70"
                     aria-valuemin="0"
@@ -265,9 +266,10 @@ function App() {
               </div>
               <div className="col-md-6">
                 <p className="mt-3 mb-0">SpringBoot</p>
-                <div class="progress">
+                <div className="progress">
                   <div
-                    class="progress-bar bar5"
+                    className="progress-bar bar5"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="70"
                     aria-valuemin="0"
@@ -277,9 +279,10 @@ function App() {
                   </div>
                 </div>
                 <p className="mt-3 mb-0">Angular</p>
-                <div class="progress">
+                <div className="progress">
                   <div
-                    class="progress-bar bar6"
+                    className="progress-bar bar6"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="30"
                     aria-valuemin="0"
@@ -289,9 +292,10 @@ function App() {
                   </div>
                 </div>
                 <p className="mt-3 mb-0">ReactJS</p>
-                <div class="progress">
+                <div className="progress">
                   <div
-                    class="progress-bar bar7"
+                    className="progress-bar bar7"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="50"
                     aria-valuemin="0"
@@ -301,9 +305,10 @@ function App() {
                   </div>
                 </div>
                 <p className="mt-3 mb-0">Bootstrap</p>
-                <div class="progress">
+                <div className="progress">
                   <div
-                    class="progress-bar bar8"
+                    className="progress-bar bar8"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="85"
                     aria-valuemin="0"
@@ -318,11 +323,11 @@ function App() {
             <hr className="w-50 me-auto ms-auto m-0" />
             <div className="row">
               <div className="col-md-6">
-                <p class="mt-2 mb-0">Trabalho em equipe</p>
-                <div class="progress">
+                <p className="mt-2 mb-0">Trabalho em equipe</p>
+                <div className="progress">
                   <div
-                    class="progress-bar bar9"
-                    data-anime="left"
+                    className="progress-bar bar9"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="95"
                     aria-valuemin="0"
@@ -332,11 +337,11 @@ function App() {
                   </div>
                 </div>
 
-                <p class="mt-3 mb-0">Proatividade</p>
-                <div class="progress">
+                <p className="mt-3 mb-0">Proatividade</p>
+                <div className="progress">
                   <div
-                    class="progress-bar bar10"
-                    data-anime="left"
+                    className="progress-bar bar10"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="75"
                     aria-valuemin="0"
@@ -346,11 +351,11 @@ function App() {
                   </div>
                 </div>
 
-                <p class="mt-3 mb-0">Orientação a detalhes</p>
-                <div class="progress">
+                <p className="mt-3 mb-0">Orientação a detalhes</p>
+                <div className="progress">
                   <div
-                    class="progress-bar bar11"
-                    data-anime="left"
+                    className="progress-bar bar11"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="88"
                     aria-valuemin="0"
@@ -361,11 +366,11 @@ function App() {
                 </div>
               </div>
               <div className="col-md-6">
-                <p class="mt-2 mb-0">Comunicação</p>
-                <div class="progress">
+                <p className="mt-2 mb-0">Comunicação</p>
+                <div className="progress">
                   <div
-                    class="progress-bar bar12"
-                    data-anime="left"
+                    className="progress-bar bar12"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="60"
                     aria-valuemin="0"
@@ -375,11 +380,11 @@ function App() {
                   </div>
                 </div>
 
-                <p class="mt-3 mb-0">Empatia</p>
-                <div class="progress">
+                <p className="mt-3 mb-0">Empatia</p>
+                <div className="progress">
                   <div
-                    class="progress-bar bar13"
-                    data-anime="left"
+                    className="progress-bar bar13"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="80"
                     aria-valuemin="0"
@@ -389,11 +394,11 @@ function App() {
                   </div>
                 </div>
 
-                <p class="mt-3 mb-0">Comprometimento</p>
-                <div class="progress">
+                <p className="mt-3 mb-0">Comprometimento</p>
+                <div className="progress">
                   <div
-                    class="progress-bar bar14"
-                    data-anime="left"
+                    className="progress-bar bar14"
+                    data-aos="fade-right"
                     role="progressbar"
                     aria-valuenow="90"
                     aria-valuemin="0"
@@ -414,7 +419,7 @@ function App() {
             <div className="row">
               <div className="col-md-6">
                 <h3 className="cv-title">Educação</h3>
-                <div className="cv-item">
+                <div className="cv-item" data-aos="fade-up"   >
                   <h4>Análise e Desenvolvimento de Sistemas</h4>
                   <h5>2021 - 2024</h5>
                   <p>
@@ -426,7 +431,7 @@ function App() {
                     informação para diversos setores de atividades.
                   </p>
                 </div>
-                <div className="cv-item">
+                <div className="cv-item" data-aos="fade-up">
                   <h4>Desenvolvedor Web Java – Fullstack </h4>
                   <h5>2021 - 2021</h5>
                   <p>
@@ -439,7 +444,7 @@ function App() {
                     e hierarquia de dados e programação orientada a objetos.
                   </p>
                 </div>
-                <div className="cv-item">
+                <div className="cv-item" data-aos="fade-up">
                   <h4>Técnico em Mecânica</h4>
                   <h5>2019 - 2020</h5>
                   <p>
@@ -453,7 +458,7 @@ function App() {
               </div>
               <div className="col-md-6">
                 <h3 className="cv-title">Profissional</h3>
-                <div className="cv-item">
+                <div className="cv-item" data-aos="fade-up">
                   <h4>Atendente telemarketing</h4>
                   <h5>2018 - 2021</h5>
                   <p>
@@ -461,7 +466,7 @@ function App() {
                   </p>
                   <p>Atendimento a empresas e SAC</p>
                 </div>
-                <div className="cv-item">
+                <div className="cv-item" data-aos="fade-up">
                   <h4>Jovem Aprendiz</h4>
                   <h5>2017 - 2017</h5>
                   <p>
@@ -472,7 +477,7 @@ function App() {
                     interno e proatividade para pegar as tarefas.
                   </p>
                 </div>
-                <div className="cv-item">
+                <div className="cv-item" data-aos="fade-up">
                   <h4>Auxiliar Administrativo</h4>
                   <h5>2016 - 2016</h5>
                   <p>
@@ -492,8 +497,8 @@ function App() {
           <div className="container pb-5 pt-5">
             <h2 className="pb-4">Portifólio</h2>
 
-            <Carousel variant="dark">
-              <Carousel.Item interval={9999}>
+            <Carousel variant="dark" data-aos="zoom-in-up">
+              <Carousel.Item >
                 <img
                   className="d-block w-100 "
                   src={letMeAsk}
@@ -505,20 +510,20 @@ function App() {
                   <p>
                     Nulla vitae elit libero, a pharetra augue mollis interdum.
                   </p>
-                  <div class="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center">
                     <a
                       href="https://github.com/codethi/blogPessoal-front-back"
                       target="_blank"
-                      class="btn btn-outline-dark me-3"
+                      className="btn btn-outline-dark me-3"
                     >
-                      <i class="bi bi-github bb"></i>
+                      <i className="bi bi-github bb"></i>
                     </a>
                     <a
                       href="https://newbloggen.netlify.app/#/login"
                       target="_blank"
-                      class="btn btn-outline-primary"
+                      className="btn btn-outline-primary"
                     >
-                      <i class="bi bi-link-45deg"></i>
+                      <i className="bi bi-link-45deg"></i>
                     </a>
                   </div>
                 </Carousel.Caption>
@@ -534,20 +539,20 @@ function App() {
                   <p className="text-white">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
-                  <div class="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center">
                     <a
                       href="https://github.com/codethi/blogPessoal-front-back"
                       target="_blank"
-                      class="btn btn-outline-dark me-3 a"
+                      className="btn btn-outline-dark me-3 a"
                     >
-                      <i class="bi bi-github"></i>
+                      <i className="bi bi-github"></i>
                     </a>
                     <a
                       href="https://newbloggen.netlify.app/#/login"
                       target="_blank"
-                      class="btn btn-outline-primary a"
+                      className="btn btn-outline-primary a"
                     >
-                      <i class="bi bi-link-45deg"></i>
+                      <i className="bi bi-link-45deg"></i>
                     </a>
                   </div>
                 </Carousel.Caption>
@@ -564,20 +569,20 @@ function App() {
                     Praesent commodo cursus magna, vel scelerisque nisl
                     consectetur.
                   </p>
-                  <div class="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center">
                     <a
                       href="https://github.com/codethi/blogPessoal-front-back"
                       target="_blank"
-                      class="btn btn-outline-dark me-3"
+                      className="btn btn-outline-dark me-3"
                     >
-                      <i class="bi bi-github"></i>
+                      <i className="bi bi-github"></i>
                     </a>
                     <a
                       href="https://newbloggen.netlify.app/#/login"
                       target="_blank"
-                      class="btn btn-outline-primary"
+                      className="btn btn-outline-primary"
                     >
-                      <i class="bi bi-link-45deg"></i>
+                      <i className="bi bi-link-45deg"></i>
                     </a>
                   </div>
                 </Carousel.Caption>
@@ -591,16 +596,15 @@ function App() {
             <h2 className="pt-3 pb-3">Contato</h2>
 
             <div className="row">
-              <div className="col">
+              <div className="col " data-aos="fade-up">
                 <div className="card p-5 h-100 shadow border-0">
-                  <form onSubmit={sendEmail} autocomplete="off">
+                  <form onSubmit={sendEmail}>
                     <Toaster position="top-right" reverseOrder={false} />
                     <div className="row pt-5 mx-auto">
                       <div className="col-lg-8 col-sm-12 form-group mx-auto mb-3">
                         <label>Nome</label>
                         <input
                           type="text"
-                          autoFocus
                           className="form-control"
                           required
                           placeholder="Seu nome"
@@ -630,12 +634,10 @@ function App() {
                           name="message"
                         ></textarea>
                       </div>
-                      <div className="col-lg-8 col-sm-12 pt-3 mx-auto d-flex justify-content-center mt-4">
-                        <input
-                          type="submit"
-                          className="btn btn-primary b"
-                          value="Enviar mensagem"
-                        ></input>
+                      <div className="col-lg-8 col-sm-12 pt-3 mx-auto d-flex justify-content-center mt-4  ">
+                        <button className="btn btn-primary b arrow">
+                          Enviar mensagem
+                        </button>
                       </div>
                     </div>
                   </form>

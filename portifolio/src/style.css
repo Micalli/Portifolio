@@ -5,6 +5,7 @@ body {
   font-family: Ubuntu, Arial;
   width: 100%;
   height: 100%;
+
 }
 
 #header {
@@ -12,8 +13,8 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #02152e;
   overflow-y: auto;
+  background-color: #02152e;
   width: 300px;
   transition: all ease-in-out 0.5s;
   padding: 0 15px;
@@ -178,7 +179,6 @@ i.menu-mobile {
 
   .carousel-control-next,
   .carousel-control-prev {
-    margin: 0 800px !important;
   }
   .card {
     width: 100%;
@@ -292,9 +292,7 @@ i.menu-mobile {
   left: -9px;
 }
 
-.carousel-dark .carousel-indicators [data-bs-target] {
-  background-color: #021f49 !important;
-}
+
 
 .carousel-control-next {
   margin-right: -1rem !important;
@@ -393,10 +391,13 @@ i.menu-mobile {
     height: 85%;
   }
   .carousel-control-next {
-    margin-right: -1rem !important;
+    margin-right: -12px !important;
   }
   .carousel-control-prev {
-    margin-left: -1rem !important;
+    margin-left: -12px !important;
+  }
+  [data-aos="fade-left"] {
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
@@ -431,11 +432,8 @@ i.menu-mobile {
   border-color: #02152e;
   background-color: #02152e!important;
   color: #fff;
-
-
-
+  transition: .4s!important;
 }
-
 
 .btn-primary:hover {
   border-color: #00bd94!important;
@@ -443,6 +441,7 @@ i.menu-mobile {
   background-color: #00bd94!important;
   border-color: #212529;
 }
+
 .form-control {
   border: solid 0px ;
 
@@ -450,18 +449,27 @@ i.menu-mobile {
    border-radius: 5px;
    font-size: 16px;
  background-color: #edf0f3;
-
  }
 
- .form-control:focus {
+ .form-control:focus-visible {
    background-color: #edf0f3;
-
- box-shadow: 0 0 7px 0.2rem rgb(2 21 46 / 15%);
-
+   box-shadow: 0 0 7px 0.2rem rgb(2 21 46 / 15%);
 }
 
  .form-control.l {
    height: 90px;
   
 }
+.shadow-card{
+  box-shadow: 25px 50px 70px -20px rgba(32, 32, 32, 0.2);
+
+}
+
+.btn-primary:after{
+content:"➤";
+margin-left: 5px;
+}
+
+
+
 

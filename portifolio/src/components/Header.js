@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Logo from '../assets/logo.png'
 
 import "../style.css";
