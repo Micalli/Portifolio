@@ -1,19 +1,23 @@
 import { useEffect } from "react";
 
-import Aos from 'aos';
-
+import Aos from "aos";
 
 import emailjs from "emailjs-com";
 import toast, { Toaster } from "react-hot-toast";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
-import 'aos/dist/aos.css'
+import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
+
+import "aos/dist/aos.css";
 
 import Hamburguer from "./components/Hamburguer";
 import Header from "./components/Header";
 
 import ImgPerfil from "./assets/perfil.png";
+import Logo from './assets/logo.png'
+
 
 import Netiflix from "./assets/netflix.png";
 import letMeAsk from "./assets/letmeask.png";
@@ -22,7 +26,7 @@ import Curriculo from "./assets/Curriculo.png";
 import "./style.css";
 
 function App() {
-  function sendEmail(e) {
+  function sendEmail(e, ) {
     e.preventDefault();
 
     emailjs
@@ -44,8 +48,10 @@ function App() {
       );
     e.target.reset();
   }
+  
 
   useEffect(() => {
+    /* Responsividade do Header */
     const menuMobile = document.querySelector(".menu-mobile");
     const body = document.querySelector("body");
 
@@ -61,13 +67,11 @@ function App() {
           menuMobile.classList.replace("bi-x", "bi-list");
         }
       });
-    });
-
-    
+    });    
   });
-  useEffect(() => {
-    Aos.init({duration:1000});
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
   }, []);
 
   return (
@@ -419,7 +423,7 @@ function App() {
             <div className="row">
               <div className="col-md-6">
                 <h3 className="cv-title">Educação</h3>
-                <div className="cv-item" data-aos="fade-up"   >
+                <div className="cv-item" data-aos="fade-up">
                   <h4>Análise e Desenvolvimento de Sistemas</h4>
                   <h5>2021 - 2024</h5>
                   <p>
@@ -498,7 +502,7 @@ function App() {
             <h2 className="pb-4">Portifólio</h2>
 
             <Carousel variant="dark" data-aos="zoom-in-up">
-              <Carousel.Item >
+              <Carousel.Item>
                 <img
                   className="d-block w-100 "
                   src={letMeAsk}
@@ -635,7 +639,7 @@ function App() {
                         ></textarea>
                       </div>
                       <div className="col-lg-8 col-sm-12 pt-3 mx-auto d-flex justify-content-center mt-4  ">
-                        <button className="btn btn-primary b arrow">
+                        <button id="btn-enviar"className="btn btn-primary  ">
                           Enviar mensagem
                         </button>
                       </div>
@@ -646,7 +650,17 @@ function App() {
             </div>
           </div>
         </section>
+        <a href="https://wa.me/5511969553410" target="_blank"><i class="bi bi-whatsapp d-flex justify-content-center align-items-center"></i></a>
       </main>
+
+      <footer id="footer"> 
+        <div className="container">
+
+          <div className="text-center">         
+            &copy; Copyright <strong>Micalli Dev</strong>
+          </div>
+        </div>
+      </footer>
     </body>
   );
 }

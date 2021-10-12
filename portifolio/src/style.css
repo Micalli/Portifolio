@@ -435,6 +435,7 @@ i.menu-mobile {
   transition: .4s!important;
 }
 
+
 .btn-primary:hover {
   border-color: #00bd94!important;
 
@@ -460,16 +461,51 @@ i.menu-mobile {
    height: 90px;
   
 }
-.shadow-card{
-  box-shadow: 25px 50px 70px -20px rgba(32, 32, 32, 0.2);
-
-}
 
 .btn-primary:after{
 content:"➤";
 margin-left: 5px;
 }
 
+.bi-whatsapp{
+  font-size: 1.6rem;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: #53cf5d96;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.35s ;
+}
+
+.bi-whatsapp:hover{
+  background-color: #02152e;
+  border-radius: 50%;
+  color: #53cf5d  ;
+}
+
+#footer{
+  padding: 15px;
+  color: #fff;
+  font-size: 14px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 999999;
+  background-color: #02152e;
+  transition: 0.3s ;
+}
+
+@media (max-width:1012px){
+  #footer{
+    position: static;
+    width: auto;
+    padding: 20px 15px;
+  }
+
+}
 
 
 
