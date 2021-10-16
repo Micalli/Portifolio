@@ -89,7 +89,7 @@ body {
 nav .logotipo {
   width: 150px;
   height: 160px;
-  margin-top: 485px;
+  margin-top: 135px;
 }
 
 @media (max-width: 1424px) {
@@ -162,6 +162,13 @@ i.menu-mobile {
   #header {
     left: -300px;
   }
+  #footer {
+  transition: all ease-in-out 0.5s;
+
+    position: fixed;
+    left: -300px;
+  }
+  
 
   i.menu-mobile {
     display: flex;
@@ -290,6 +297,17 @@ i.menu-mobile {
   background: #fff;
   border-radius: 50%;
   left: -9px;
+}
+
+
+.theme-dark .cv-item {
+  border-left: 2px solid #fff;
+
+}
+.theme-dark .cv .cv-item::before {
+  border: 2px solid #fff;
+  background:  var(--dark-background) ;
+ 
 }
 
 
@@ -445,22 +463,55 @@ i.menu-mobile {
 
 .form-control {
   border: solid 0px ;
-
-    height: 40px;
+  height: 40px;
    border-radius: 5px;
    font-size: 16px;
- background-color: #edf0f3;
+   background-color: #edf0f3;
+   transition: 0.27s;
  }
 
  .form-control:focus-visible {
-   background-color: #edf0f3;
+  background-color: #edf0f3;
    box-shadow: 0 0 7px 0.2rem rgb(2 21 46 / 15%);
 }
+
+.form-control.fill:focus-visible {
+  background-color: #a7e2c0b6;
+   box-shadow: 0 0 7px 0.2rem rgb(2 21 46 / 15%);
+}
+
+.theme-dark .form-control {
+  border: solid 0px ;
+  height: 40px;
+   border-radius: 5px;
+   font-size: 16px;
+   background-color: #edf0f3;
+   transition: 0.27s;
+ }
+
+ .theme-dark .form-control:focus-visible {
+  background-color: #37383a;
+   box-shadow: 0 0 7px 0.2rem rgb(2 21 46 / 15%);
+}
+
+.theme-dark .form-control.fill {
+  background-color: #a7e2c0b6;
+   box-shadow: 0 0 7px 0.2rem rgb(2 21 46 / 15%);
+}
+
+
 
  .form-control.l {
    height: 90px;
   
 }
+.fill{
+  background-color: #a7e2c0b6;
+}
+.theme-dark .fill{
+  background-color: #a7e2c0b6;
+}
+
 
 .btn-primary:after{
 content:"➤";
@@ -485,6 +536,13 @@ margin-left: 5px;
   color: #53cf5d  ;
 }
 
+.theme-dark .bi-whatsapp:hover{
+  background-color: #53cf5d;
+  color: #000000  ;
+
+  
+}
+
 #footer{
   padding: 15px;
   color: #fff;
@@ -495,17 +553,106 @@ margin-left: 5px;
   width: 300px;
   z-index: 999999;
   background-color: #02152e;
-  transition: 0.3s ;
+  transition: all ease-in-out 0.5s;
+
+}
+.menu-nav-active #footer{
+  transition: all ease-in-out 0.5s;
+
 }
 
-@media (max-width:1012px){
+@media (max-width:1424px){
   #footer{
     position: static;
     width: auto;
     padding: 20px 15px;
   }
+  .bi-whatsapp{
+    color: #53cf5dec;
+  }
 
 }
+
+.theme-light  body{
+ 
+  transition: 0.2s;
+  
+}
+.theme-dark  body{
+  color: #fff!important;
+  background-color: var(--dark-background);
+  transition: 0.2s;
+  
+}
+.theme-dark  h4{
+  color: #fff!important;
+  
+}
+.theme-dark  h5{
+  color: #000!important;
+  
+}
+.theme-dark  label{
+  color: #fff!important;
+  
+}
+
+.theme-dark .cv-title{
+  color: #fff!important;
+  
+}
+.theme-dark  .list-group-item{
+  color: #fff;
+  background-color: var(--dark-background);
+
+}
+
+.theme-dark  {
+  --dark-text: #292929;
+  --dark-background: #0a141d;
+  --light-background: #586F7C;
+  --accent: #b8dbd9;
+  --button-border: #b8dbd9;
+  --light-text: #F9F8F8;
+}
+.theme-dark .section-bg {
+  color: #fff;
+  background-color: #6b7abb;
+
+}
+.theme-dark .card{
+  background-color: var(--dark-background)!important;
+
+}
+
+.theme-dark .btn-primary {
+
+  border-color: #03aa86!important;
+
+  background-color: #03aa86!important;
+  border-color: #212529;
+  color: #fff;
+
+ 
+  transition: .4s!important;
+}
+
+
+.theme-dark .btn-primary:hover {
+  border-color: #6b7abb!important;
+
+  background-color: #6b7abb!important;
+  color: #fff;
+
+}
+
+.theme-dark .form-control {
+  
+   background-color: #484a4d;
+   color: #fff
+  
+ }
+
 
 
 
