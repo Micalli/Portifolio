@@ -120,8 +120,8 @@ function App() {
     <body>
       <Hamburguer />
       <Header />
-      <main id="main">
-        <section id="inicio" className="row m-0 p-0">
+      <main id="main"  className="">
+        <section id="inicio" className="row m-0 p-0 shapedividers_com-3747">
           <div className="col-md-5  d-flex justify-content-center align-items-center flex-column ">
             <h2 className="text-white text-shadow">Bruno Micalli</h2>
             <span className="text-white text-shadow" id="subtitle">
@@ -174,7 +174,7 @@ function App() {
           <div className="row mt-4 ">
             <div className="col-md-4 " data-aos="fade-right">
               <img
-                className="img-fluid shadow"
+                className="img-fluid shadowx"
                 src={ImgPerfil}
                 alt="Foto do Bruno"
                 data-aos="fade-right"
@@ -643,7 +643,7 @@ function App() {
 
             <div className="row">
               <div className="col " data-aos="fade-up">
-                <div className="card p-5 h-100 shadow border-0">
+                <div className="card p-5 h-100  border-0 cardx">
                   <form onSubmit={sendEmail}>
                     <Toaster position="top-right" reverseOrder={false} />
                     <div className="row pt-5 mx-auto">
@@ -688,8 +688,9 @@ function App() {
                         ></textarea>
                       </div>
                       <div className="col-lg-8 col-sm-12 pt-3 mx-auto d-flex justify-content-center mt-4  ">
-                        <button id="btn-enviar" className="btn btn-primary  ">
+                        <button id="btn-enviar" className=" hvr-sweep-to-right hvr-grow ">
                           Enviar mensagem
+                          <i class=" hvr-wobble-horizontal bi bi-arrow-right-short "></i>
                         </button>
                       </div>
                     </div>
@@ -704,7 +705,7 @@ function App() {
         </a>
       </main>
 
-      <footer id="footer">
+      <footer id="footer" className="shapedividers_com-4392">
         <div className="container">
           <div className="text-center">
             &copy; Copyright <strong>Micalli Dev</strong>
