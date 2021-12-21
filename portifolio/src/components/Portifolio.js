@@ -65,7 +65,7 @@ const Portifolio = () => {
               <p>Pagina estática ultilizando HTML, CSS, JS e bootstrap;</p>
               <div className="d-flex justify-content-center">
                 <a
-                  href="https://github.com/codethi/blogPessoal-front-back"
+                  href="https://github.com/Micalli/CV-Bootstrap"
                   target="_blank"
                   className="btn btn-outline-dark curriculo-btn me-3"
                 >
