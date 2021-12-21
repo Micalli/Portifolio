@@ -1,13 +1,11 @@
-import DarkModeToggle from "react-dark-mode-toggle";
 import { useEffect, useState } from "react";
-import { theme } from "../utils/theme"
 
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.svg";
+
 
 import "../style.css";
 import "../styles/header.css";
 import "../styles/toggle.css";
-
 
 import ImgPerfil from "../assets/perfil.png";
 
@@ -17,28 +15,41 @@ export default function Header() {
     localStorage.setItem("theme", themeName);
     document.documentElement.className = themeName;
   }
-  const [togClass, setTogClass] = useState('dark');
-  let theme = localStorage.getItem('theme');
+  const [togClass, setTogClass] = useState("dark");
+  let theme = localStorage.getItem("theme");
 
-  
   useEffect(() => {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTogClass('dark')
-    } else if (localStorage.getItem('theme') === 'theme-light') {
-        setTogClass('light')
+    if (localStorage.getItem("theme") === "theme-dark") {
+      setTogClass("dark");
+    } else if (localStorage.getItem("theme") === "theme-light") {
+      setTogClass("light");
     }
-}, [theme])
+  }, [theme]);
 
-const handleOnClick = () => {
-  if (localStorage.getItem('theme') === 'theme-dark') {
-      setTheme('theme-light');
-      setTogClass('light')
-  } else {
-      setTheme('theme-dark');
-      setTogClass('dark')
-  }
-  console.log(theme)
-}
+  useEffect(() => {
+    const itens = document.querySelectorAll("nav-item");
+
+    for (let i = 0; i < itens.length; i++) {
+      itens[i].onClick = function () {
+        let j = 0;
+        while (j < itens.length) {
+          itens[j++].className = "nav-item";
+        }
+        itens[i].className = "nav-item active-item";
+      };
+    }
+  });
+
+  const handleOnClick = () => {
+    if (localStorage.getItem("theme") === "theme-dark") {
+      setTheme("theme-light");
+      setTogClass("light");
+    } else {
+      setTheme("theme-dark");
+      setTogClass("dark");
+    }
+    console.log(theme);
+  };
 
   return (
     <aside id="header" className={theme}>
@@ -46,21 +57,23 @@ const handleOnClick = () => {
         <img src={ImgPerfil} alt="Foto do Bruno" />
         <h1>Bruno Micalli</h1>
         <div className="social-links mt-4  text-center">
-          <a target="_blank" href="">
+          <a target="_blank" href="https://www.linkedin.com/in/brunomicalli/">
             <i class="bi bi-linkedin"></i>
           </a>
-          <a target="_blank" href="">
+          <a target="_blank" href="https://github.com/Micalli">
             <i class="bi bi-github"></i>
           </a>
-          <a target="_blank" href="">
+          <a target="_blank" href="https://www.instagram.com/brunomicalli/">
             <i class="bi bi-instagram"></i>
           </a>
         </div>
       </section>
 
-      <nav id="navbar" className="nav-menu ">
+      <nav id="navbar" className="nav-menu">
         <ul class="nav flex-column ">
-          <li class="nav-item ">
+          <li class="nav-item inicio  ">
+            <b></b>
+            <b></b>
             <a class="nav-link " aria-current="page" href="#inicio">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +95,11 @@ const handleOnClick = () => {
               Início
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item sobre ">
+          <p className="separator1"></p>
+
+            <b></b>
+
             <a class="nav-link" href="#about">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -97,14 +114,16 @@ const handleOnClick = () => {
               Sobre
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#ability">
+          <li class="nav-item ">
+          <p className="separator1"></p>
+          <p className="separator2"></p>
+            <a class="nav-link habilidade" href="#ability">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
                 height="25"
                 fill="currentColor"
-                class="bi bi-list-check"
+                className="bi bi-list-check"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -114,9 +133,11 @@ const handleOnClick = () => {
               </svg>
               Habilidade
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#curriculo">
+          </li> 
+          <li class="nav-item ">
+          <p className="separator2"></p>
+          <p className="separator3  "></p>
+            <a class="nav-link curriculo" href="#curriculo">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -130,7 +151,9 @@ const handleOnClick = () => {
               Curriculo
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
+          <p className="separator3  "></p>
+          <p className="separator4  "></p>
             <a class="nav-link" href="#portifolio">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +168,9 @@ const handleOnClick = () => {
               Portifílio
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
+          <p className="separator4  "></p>
+          <p className="separator5  "></p>
             <a class="nav-link" href="#contato">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -160,19 +185,30 @@ const handleOnClick = () => {
               Contato
             </a>
           </li>
-          <div className="container--toggle">
-            {
-                togClass === "light" ?
-                <input type="checkbox" id="toggle" className="toggle--checkbox" onClick={handleOnClick} checked />
-                :
-                <input type="checkbox" id="toggle" className="toggle--checkbox" onClick={handleOnClick} />
-            }
-            <label htmlFor="toggle" className="toggle--label">
-                <span className="toggle--label-background"></span>
-            </label>
-        </div>
-          <img className="logo" src={Logo} alt="Foto do Bruno" />
+          
         </ul>
+        <div className="container--toggle">
+          {togClass === "light" ? (
+            <input
+              type="checkbox"
+              id="toggle"
+              className="toggle--checkbox"
+              onClick={handleOnClick}
+              checked
+            />
+          ) : (
+            <input
+              type="checkbox"
+              id="toggle"
+              className="toggle--checkbox"
+              onClick={handleOnClick}
+            />
+          )}
+          <label htmlFor="toggle" className="toggle--label">
+            <span className="toggle--label-background"></span>
+          </label>
+        </div>
+        <img className="logo" src={Logo} alt="Logo" />
       </nav>
     </aside>
   );
