@@ -10,7 +10,6 @@ const Abilities = () => {
           habilidades técnicas, a maioria delas estão aq, de acordo com a
           porcentagem de conhecimento que eu acredito ter em cada uma delas.
         </p>
-        {/*Barra de Progresso*/}
         <div className="row mb-4">
           <div className="col-md-6">
             <p className="mt-3 mb-0">HTML</p>
