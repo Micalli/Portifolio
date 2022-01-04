@@ -18,9 +18,9 @@ const Portifolio = () => {
           <Carousel.Item>
             <img className="d-block w-100 " src={letMeAsk} alt="First slide" />
 
-            <Carousel.Caption>
-              <h5>LetMeAsk</h5>
-              <p>
+            <Carousel.Caption className="subtitle">
+              <h5 className="subtitle">LetMeAsk</h5>
+              <p className="subtitle">
                 Plataforma para colocar duvidas,usando React, Sass, Typescript e
                 Firebase feito durante o Evento da RocketSeat.
               </p>

@@ -10,7 +10,7 @@ const About = () => {
         <div className="col-md-12" data-aos="fade-down">
           <h2 className="pt-3">Sobre</h2>
           <p>
-            Sou apaixonado por novos desafios, proativo,paciente, gosto de
+            Sou apaixonado por novos desafios, proativo, paciente, gosto de
             trabalhar em equipe, a curiosidade me impulsiona em aprender e
             desenvolver coisas novas e também procuro sempre me desenvolver para
             colaborar com novas propostas.

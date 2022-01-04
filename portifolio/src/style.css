@@ -8,8 +8,6 @@ body {
   background: #fff;
 }
 
-
-
 #main {
   margin-left: 300px;
 }
@@ -189,20 +187,19 @@ i.menu-mobile {
 }
 .egide {
   color: #212529;
-  transition: .2s;
+  transition: 0.2s;
 }
 .egide:hover {
   color: #03aa86;
 }
 
-.theme-dark .egide{
+.theme-dark .egide {
   color: #fff;
 }
 
 .theme-dark .egide:hover {
   color: #03aa86;
 }
-
 
 .section-bg {
   background-color: #eff5ff;
@@ -324,12 +321,21 @@ i.menu-mobile {
   transition: 0.4s;
   z-index: 50;
 }
+@media (max-width: 500px) {
+  .carousel-item > .carousel-caption > h5 {
+    font-size: 0.6rem !important;
+  }
+  .carousel-item > .carousel-caption > p {
+    font-size: 0.6rem !important;
+  }
+}
 
 .carousel .carousel-item:hover > img {
   filter: blur(5px) !important;
 }
 
 .carousel-caption {
+  width: 100%;
   bottom: -8px;
   transition: 0.3s;
 }
@@ -341,6 +347,7 @@ i.menu-mobile {
   opacity: 0;
   transition: 0.4s;
 }
+
 .carousel-item > .carousel-caption > div {
   opacity: 0;
   transition: 0.4s;
@@ -418,43 +425,43 @@ i.menu-mobile {
   background-color: #02152e;
   border-color: #212529;
 }
-.git-btn{
+.git-btn {
   border-color: #02152e;
-  color: #000
+  color: #000;
 }
 
-.git-btn:hover{
+.git-btn:hover {
   background-color: #048365;
 }
 
-.letmeask-btn{
+.letmeask-btn {
   border-color: #02152e;
-  color: #000
+  color: #000;
 }
 
-.letmeask-btn:hover{
+.letmeask-btn:hover {
   background-color: #a30b37;
 }
 
-.curriculo-btn{
+.curriculo-btn {
   border-color: #02152e;
-  color: #000
+  color: #000;
 }
 
-.curriculo-btn:hover{
+.curriculo-btn:hover {
   background-color: #260273;
 }
 
-.todo-btn{
+.todo-btn {
   border-color: #02152e;
-  color: #000
+  color: #000;
 }
 
-.todo-btn:hover{
+.todo-btn:hover {
   background-color: #303f9f;
 }
 .netflix-btn {
-  color: #fff
+  color: #fff;
 }
 .btn-primary {
   border: none;
@@ -655,12 +662,12 @@ input:-webkit-autofill {
 .theme-dark .shadowx {
   box-shadow: 20px 20px 60px #1d1d1d7c, -20px -20px 60px #0505056c;
 }
-.loading{
-  margin-left:8px;
+.loading {
+  margin-left: 8px;
 }
 
 @media (max-width: 330px) {
-  #btn-enviar{
-    font-size:12px;
+  #btn-enviar {
+    font-size: 12px;
   }
 }
