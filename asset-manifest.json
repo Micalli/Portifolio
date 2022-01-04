@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Portifolio/static/css/main.7e95321b.chunk.css",
+    "main.js": "/Portifolio/static/js/main.59fc9e7c.chunk.js",
+    "main.js.map": "/Portifolio/static/js/main.59fc9e7c.chunk.js.map",
+    "runtime-main.js": "/Portifolio/static/js/runtime-main.186637ce.js",
+    "runtime-main.js.map": "/Portifolio/static/js/runtime-main.186637ce.js.map",
+    "static/css/2.7ac31146.chunk.css": "/Portifolio/static/css/2.7ac31146.chunk.css",
+    "static/js/2.92b20829.chunk.js": "/Portifolio/static/js/2.92b20829.chunk.js",
+    "static/js/2.92b20829.chunk.js.map": "/Portifolio/static/js/2.92b20829.chunk.js.map",
+    "index.html": "/Portifolio/index.html",
+    "static/css/2.7ac31146.chunk.css.map": "/Portifolio/static/css/2.7ac31146.chunk.css.map",
+    "static/css/main.7e95321b.chunk.css.map": "/Portifolio/static/css/main.7e95321b.chunk.css.map",
+    "static/js/2.92b20829.chunk.js.LICENSE.txt": "/Portifolio/static/js/2.92b20829.chunk.js.LICENSE.txt",
+    "static/media/Curriculo.9f2e3fde.png": "/Portifolio/static/media/Curriculo.9f2e3fde.png",
+    "static/media/GitHubApi.54b01d14.png": "/Portifolio/static/media/GitHubApi.54b01d14.png",
+    "static/media/TodoApp.ce73ad23.png": "/Portifolio/static/media/TodoApp.ce73ad23.png",
+    "static/media/style.css": "/Portifolio/static/media/bg-home.ac075496.svg",
+    "static/media/letmeask.a9bd9158.png": "/Portifolio/static/media/letmeask.a9bd9158.png",
+    "static/media/logo.521aa927.svg": "/Portifolio/static/media/logo.521aa927.svg",
+    "static/media/netflix.39cab30d.png": "/Portifolio/static/media/netflix.39cab30d.png",
+    "static/media/perfil.bcf44d31.png": "/Portifolio/static/media/perfil.bcf44d31.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.186637ce.js",
+    "static/css/2.7ac31146.chunk.css",
+    "static/js/2.92b20829.chunk.js",
+    "static/css/main.7e95321b.chunk.css",
+    "static/js/main.59fc9e7c.chunk.js"
+  ]
+}
